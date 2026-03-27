@@ -37,4 +37,3 @@ def start_game(player_name, role):
     time.sleep(DELAY_SECS)
     print("")
     functions.bubbles_obstacle(role)
-
