@@ -6,7 +6,7 @@ init(autoreset=True)
 
 DELAY_SECS = 1
 
-def start_game(player_name, role):
+def game(role):
     print("Welcome to the:")
     time.sleep(DELAY_SECS)
     print(ascii.title_ascii())
@@ -37,3 +37,11 @@ def start_game(player_name, role):
     time.sleep(DELAY_SECS)
     print("")
     functions.bubbles_obstacle(role)
+    print("Alright, you dodged all of that!")
+    time.sleep(DELAY_SECS)
+    print("You continue forward until you see two clearings, two different paths.")
+    time.sleep(DELAY_SECS)
+    print("You can either go left or right.")
+    print("")
+    time.sleep(DELAY_SECS)
+    functions.obstacle_after(role)

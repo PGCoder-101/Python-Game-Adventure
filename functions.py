@@ -8,7 +8,7 @@ def start_option():
         start = input("Y/N? ").lower().strip()
         print("")
         if start in ['yes', 'y']: 
-            print("Alright, you enter the dense jungle, looking back at the pathway.")
+            print("You enter the dense jungle, looking back at the pathway.")
             time.sleep(DELAY_SECS1)
             print("You keep on thinking about your decision, but you move on.")
             time.sleep(1)
@@ -74,10 +74,10 @@ def bubbles_obstacle(role):
         option1 = input("Do you want to fight or run? F/R: ").lower().strip()
         print("")
 
-        if option1 == 'f':
+        if option1 == 'f' or option1 == 'fight':
             return bubbles_obstacle2(role)
 
-        elif option1 == 'r': 
+        elif option1 == 'r' or option1 == 'run': 
             print("Whatever it was, it's faster than you.")
             time.sleep(DELAY_SECS1)
             print("Sadly, it catches up to you, and kills you with its acidic bubbles.")
@@ -178,3 +178,33 @@ def bubbles_obstacle2(role):
             break
 
     return True
+
+def obstacle_after(role): 
+    while True: 
+        ask2 = input("Right, Left?").lower().strip()
+        print("")
+        if ask2 in ['r', 'right']: 
+            print("You walk down that path.")
+            time.sleep(DELAY_SECS1)
+            print("Slowly, but carefully.")
+            time.sleep(DELAY_SECS1)
+            print("Until a mysterious creature comes in front of you.")
+            time.sleep(DELAY_SECS1)
+            print("It is NOT friendly, and kill you.")
+            time.sleep(DELAY_SECS1)
+            print(ascii.gameover_ascii())
+            exit()
+        
+        elif ask2 in ['l', 'left']: 
+            print("You have answered, correctly.")
+            time.sleep(DELAY_SECS1)
+            print("You traverse down the path, awaiting your next decision/obstacle.")
+            print("")
+            break
+        
+        else:
+            print("You took too long to answer, the bubble creature was following you and killed you.")
+            time.sleep(DELAY_SECS1)
+            print("")
+            print(ascii.gameover_ascii())
+            exit()
