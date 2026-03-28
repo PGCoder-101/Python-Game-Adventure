@@ -4,7 +4,7 @@ import functions
 from colorama import Style, init, Fore, Back
 init(autoreset=True)
 
-DELAY_SECS = 1
+DELAY_SECS = 1.2
 
 def game(role):
     print("Welcome to the:")
@@ -45,3 +45,9 @@ def game(role):
     print("")
     time.sleep(DELAY_SECS)
     functions.obstacle_after(role)
+    print("")
+    time.sleep(DELAY_SECS)
+    print("You keep on moving forwawrd, when again, another strange creature pops out.")
+    time.sleep(DELAY_SECS)
+    print("Your mind suddenly races between three options: ")
+    functions.obstacle_after2(role)

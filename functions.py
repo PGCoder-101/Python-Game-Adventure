@@ -1,7 +1,7 @@
 import ascii
 import time
 
-DELAY_SECS1 = 1
+DELAY_SECS1 = 1.2
 
 def start_option(): 
     while True: 
@@ -94,6 +94,8 @@ def bubbles_obstacle2(role):
 
         if role == 'knowledge': 
             print("You can sense where the bubbles are going to come from, as you have chosen the power of knowledge.")
+            time.sleep(DELAY_SECS1)
+            print("Just move in the opposite direction of the the arrow.")
 
             obstacle1 = input('It is coming to your right! (JUMP, CROUCH, RIGHT, LEFT): ').lower().strip()
             if obstacle1 in ['left', 'l']:
@@ -181,7 +183,7 @@ def bubbles_obstacle2(role):
 
 def obstacle_after(role): 
     while True: 
-        ask2 = input("Right, Left?").lower().strip()
+        ask2 = input("Right, Left? ").lower().strip()
         print("")
         if ask2 in ['r', 'right']: 
             print("You walk down that path.")
@@ -190,7 +192,7 @@ def obstacle_after(role):
             time.sleep(DELAY_SECS1)
             print("Until a mysterious creature comes in front of you.")
             time.sleep(DELAY_SECS1)
-            print("It is NOT friendly, and kill you.")
+            print("It is NOT friendly, and kills you.")
             time.sleep(DELAY_SECS1)
             print(ascii.gameover_ascii())
             exit()
@@ -206,5 +208,36 @@ def obstacle_after(role):
             print("You took too long to answer, the bubble creature was following you and killed you.")
             time.sleep(DELAY_SECS1)
             print("")
+            print(ascii.gameover_ascii())
+            exit()
+
+def obstacle_after2(role): 
+    while True: 
+        ask3 = input("Talk/Ignore/Run? ").lower().strip()
+        print("")
+        if ask3 in ['talk', 't']: 
+            print("He is very glad you stopped by and talked to him!")
+            time.sleep(DELAY_SECS1)
+            print("He tells you a clue for the next obstacle:")
+            time.sleep(DELAY_SECS1)
+            print("\'The square root of 576.'")
+            time.sleep(DELAY_SECS1)
+            break
+        elif ask3 in ['ignore', 'i']:
+            print("You don't bother the creature, it doesn't bother you.")
+            time.sleep(DELAY_SECS1)
+            break
+        elif ask3 in ['run', 'r']: 
+            print("The creature is offended as to your actions.")
+            time.sleep(DELAY_SECS1)
+            print("It kills you.")
+            time.sleep(DELAY_SECS1)
+            print(ascii.gameover_ascii())
+            exit()
+        else: 
+            print("You don't decide in time, and the creature thinks you are there to kill him.")
+            time.sleep(DELAY_SECS1)
+            print("He kills you before you can even say anything.")
+            time.sleep(DELAY_SECS1)
             print(ascii.gameover_ascii())
             exit()
