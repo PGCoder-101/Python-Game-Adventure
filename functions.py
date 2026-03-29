@@ -11,7 +11,7 @@ def start_option():
             print("You enter the dense jungle, looking back at the pathway.")
             time.sleep(DELAY_SECS1)
             print("You keep on thinking about your decision, but you move on.")
-            time.sleep(1)
+            time.sleep(DELAY_SECS1)
             print(ascii.forest_ascii())
             print("")
             break
@@ -218,9 +218,9 @@ def obstacle_after2(role):
         if ask3 in ['talk', 't']: 
             print("He is very glad you stopped by and talked to him!")
             time.sleep(DELAY_SECS1)
-            print("He tells you a clue for the next obstacle:")
+            print("He tells you a clue for a later obstacle:")
             time.sleep(DELAY_SECS1)
-            print("\'The square root of 576.'")
+            print("Tun left.")
             time.sleep(DELAY_SECS1)
             break
         elif ask3 in ['ignore', 'i']:
@@ -238,6 +238,57 @@ def obstacle_after2(role):
             print("You don't decide in time, and the creature thinks you are there to kill him.")
             time.sleep(DELAY_SECS1)
             print("He kills you before you can even say anything.")
+            time.sleep(DELAY_SECS1)
+            print(ascii.gameover_ascii())
+            exit()
+
+def obstacle_after3(role):
+    while True:
+        print("After narrowly avoiding that encounter, you continue forward to realise the acidic bubble monster has been following you.")
+        print("")
+        time.sleep(DELAY_SECS1)
+        print("Do you run or try to fight again? ")
+        print("")
+        time.sleep(DELAY_SECS1)
+        ask4 = input("Run/Fight? ").lower().strip()
+        if role in ['k', 'knowledge'] and ask4 in ['f', 'fight']: 
+            print("You now have to answer each riddle it gives you, before it leaves you alone for good.")
+            print("")
+            riddle1 = input("If an integer is square rooted, the result is 8. What is the integer? ").lower().strip()
+            print("")
+            if riddle1 in ['64', 'sixty-four', 'sixty four']: 
+                print("That was an easy one!")
+            else: 
+                print("Oh well, bye!")
+                time.sleep(DELAY_SECS1)
+                print(ascii.gameover_ascii())
+                exit()
+            
+            riddle2 = input("If I am 10 now, and my mother is twice that age, what will be my mother's age in 10 years? ").lower()
+            print("")
+            if riddle2 in ['30', 'thirty']: 
+                print("Hmmm, not bad.")
+            else: 
+                print("...")
+                time.sleep(DELAY_SECS1)
+                print(ascii.gameover_ascii())
+                exit()
+
+            riddle3 = input("This is the last one. What is the name of the title of this game? ").lower().strip()
+            print("")
+            if riddle3 in ['jungle adventure', 'ja']: 
+                print("Okay. You move on.")
+                print("")
+                break
+            else: 
+                print("Seriously?")
+                time.sleep(DELAY_SECS1)
+                print(ascii.gameover_ascii())
+        elif role in ['power', 'p'] and ask4 in ['f','fight']: 
+            print("Before the creature can even say anything, you kill it with ease.")
+            break
+        elif ask4 in ['r', 'run']:
+            print("It kills you before you can even react. Wrong choice.")
             time.sleep(DELAY_SECS1)
             print(ascii.gameover_ascii())
             exit()

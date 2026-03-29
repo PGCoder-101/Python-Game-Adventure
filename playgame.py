@@ -51,3 +51,5 @@ def game(role):
     time.sleep(DELAY_SECS)
     print("Your mind suddenly races between three options: ")
     functions.obstacle_after2(role)
+    print("")
+    functions.obstacle_after3(role)
