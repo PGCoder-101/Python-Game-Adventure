@@ -37,7 +37,6 @@ def game(role):
     time.sleep(DELAY_SECS)
     print("")
     functions.bubbles_obstacle(role)
-    print("Alright, you dodged all of that!")
     time.sleep(DELAY_SECS)
     print("You continue forward until you see two clearings, two different paths.")
     time.sleep(DELAY_SECS)

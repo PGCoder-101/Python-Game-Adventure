@@ -34,7 +34,6 @@ def start_option():
 def role_option():
     while True: 
         role = input("Do you want to wield knowledge or power? K/P ").lower().strip()
-
         if role in ['knowledge', 'k']: 
             print(ascii.knowledge_ascii())
             time.sleep(DELAY_SECS1)
