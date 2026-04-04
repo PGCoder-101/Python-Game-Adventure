@@ -1,5 +1,6 @@
 import ascii
 import time
+import random
 
 DELAY_SECS1 = 1.2
 
@@ -291,3 +292,40 @@ def obstacle_after3(role):
             time.sleep(DELAY_SECS1)
             print(ascii.gameover_ascii())
             exit()
+
+def infoafterobs3(role):
+    print("After finally evading the bubble creature, you continue forward.")
+    time.sleep(DELAY_SECS1)
+    print("You breathe a sigh of relief as you finally start to get a sense of this place.")
+    time.sleep(DELAY_SECS1)
+    print("Until, of course. You thought too soon.")
+    time.sleep(DELAY_SECS1)
+    while True:
+        if role in ['p, power']: 
+            print("You fall into a hidden pit, but are able to survive it as you have chosen power.")
+            time.sleep(DELAY_SECS1)
+            break
+        elif role in ['k', 'knowledge']: 
+            print("You fall into a pit, but survive due to your knowledge on how to make a makeshift crutch.")
+            time.sleep(DELAY_SECS1)
+            break
+
+def obstacle_after4(): 
+    print("Now it's a bit of a luck game.")
+    time.sleep(DELAY_SECS1)
+    for i in range(3):
+        ask21 = int(input("You have to choose a random number between 1 and 5 (inc.) "))
+        num = random.randint(1, 5)
+        if ask21 == num: 
+            print('You are successful and move on to the next stage.')
+            time.sleep(DELAY_SECS1)
+            break 
+        elif ask21 != num: 
+            print(f'That is incorrect, however, you have two more chances, the correct number was {num}.')
+    else: 
+        print("You have guessed incorrectly.")
+        time.sleep(DELAY_SECS1)
+        print("A trapdoor you promise to yourself not seeing suddenly appears and you fall down and die.")
+        time.sleep(DELAY_SECS1)
+        print(ascii.gameover_ascii())
+        exit()

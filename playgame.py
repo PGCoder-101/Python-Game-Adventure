@@ -52,3 +52,6 @@ def game(role):
     functions.obstacle_after2(role)
     print("")
     functions.obstacle_after3(role)
+    print("")
+    functions.infoafterobs3(role)
+    functions.obstacle_after4()
